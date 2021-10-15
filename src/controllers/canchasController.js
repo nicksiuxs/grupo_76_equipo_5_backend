@@ -16,8 +16,9 @@ class CanchasController {
 
   //Actualizar carro
   update(req, res) {
-    let { id, complejoDeportivo, numCancha, disponibilidad, phFds, phEs } =
+    let { _id, complejoDeportivo, numCancha, disponibilidad, phFds, phEs } =
       req.body;
+
     let objCancha = {
       complejoDeportivo,
       numCancha,
@@ -26,7 +27,7 @@ class CanchasController {
       phEs,
     };
     canchas.findByIdAndUpdate(
-      id,
+      _id,
       {
         $set: objCancha,
       },
