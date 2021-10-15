@@ -62,6 +62,18 @@ class CanchasController {
       }
     });
   }
+
+  //Consultar cancha por id
+  async getCanchaById(req, res) {
+    const { _id } = req.params;
+
+    const cancha = await canchas.findById(_id);
+    if (!cancha) {
+      return res.status(404).send();
+    } else {
+      res.status(200).send(cancha);
+    }
+  }
 }
 
 module.exports = CanchasController;

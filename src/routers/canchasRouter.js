@@ -10,6 +10,7 @@ class CanchasRouter {
   config() {
     const canchaC = new CanchasController();
     this.router.get("/canchas", canchaC.getAllCanchas);
+    this.router.get("/canchas/:_id", canchaC.getCanchaById);
     this.router.post("/canchas", canchaC.register);
     this.router.put("/canchas", canchaC.update);
     this.router.delete("/canchas", canchaC.delete);
